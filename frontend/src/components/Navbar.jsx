@@ -39,6 +39,7 @@ const Navbar = () => {
       </ul>
 
       <div className='flex items-center gap-4 '>
+        <a href={import.meta.env.VITE_ADMIN_URL} target="_blank" rel="noopener noreferrer" className='border border-gray-400 text-gray-600 px-6 py-2 rounded-full hidden md:block'>Admin Panel</a>
         {
           token && userData
             ? <div className='flex items-center gap-2 cursor-pointer group relative'>
