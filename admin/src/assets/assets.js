@@ -4,11 +4,11 @@ import group_profiles from './group_profiles.png'
 import profile_pic from './profile_pic.png'
 import contact_image from './contact_image.png'
 import about_image from './about_image.png'
-import logo from './logo.svg'
 import medivue_logo from './medivue_logo.svg'
 import dropdown_icon from './dropdown_icon.svg'
 import menu_icon from './menu_icon.svg'
 import cross_icon from './cross_icon.png'
+import tick_icon from './tick_icon.svg'
 import chats_icon from './chats_icon.svg'
 import verified_icon from './verified_icon.svg'
 import arrow_icon from './arrow_icon.svg'
@@ -43,7 +43,6 @@ export const assets = {
     appointment_img,
     header_img,
     group_profiles,
-    logo,
     medivue_logo,
     chats_icon,
     verified_icon,
@@ -54,6 +53,7 @@ export const assets = {
     about_image,
     menu_icon,
     cross_icon,
+    tick_icon,
     dropdown_icon,
     upload_icon,
     stripe_logo,
