@@ -38,7 +38,7 @@ const Navbar = () => {
         </NavLink>
       </ul>
 
-      <div className='flex items-center gap-4 '>
+      <div className='flex items-center gap-4'>
         <a href={import.meta.env.VITE_ADMIN_URL} target="_blank" rel="noopener noreferrer" className='border border-gray-400 text-gray-600 px-6 py-2 rounded-full hidden md:block'>Admin Panel</a>
         {
           token && userData
@@ -64,11 +64,25 @@ const Navbar = () => {
             <img onClick={() => setShowMenu(false)} src={assets.cross_icon} className='w-7' alt="" />
           </div>
           <ul className='flex flex-col items-center gap-2 mt-5 px-5 text-lg font-medium'>
-            <NavLink onClick={() => setShowMenu(false)} to='/'><p className='px-4 py-2 rounded full inline-block'>HOME</p></NavLink>
-            <NavLink onClick={() => setShowMenu(false)} to='/doctors' ><p className='px-4 py-2 rounded full inline-block'>ALL DOCTORS</p></NavLink>
-            <NavLink onClick={() => setShowMenu(false)} to='/about' ><p className='px-4 py-2 rounded full inline-block'>ABOUT</p></NavLink>
-            <NavLink onClick={() => setShowMenu(false)} to='/contact' ><p className='px-4 py-2 rounded full inline-block'>CONTACT</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/'><p className='px-4 py-2 rounded-full inline-block'>HOME</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/doctors'><p className='px-4 py-2 rounded-full inline-block'>ALL DOCTORS</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/about'><p className='px-4 py-2 rounded-full inline-block'>ABOUT</p></NavLink>
+            <NavLink onClick={() => setShowMenu(false)} to='/contact'><p className='px-4 py-2 rounded-full inline-block'>CONTACT</p></NavLink>
           </ul>
+
+          {/* Mobile Login/Profile Section */}
+          <div className='flex flex-col items-center mt-6 px-5 gap-3'>
+            {token && userData
+              ? <>
+                  <p className='text-gray-600 font-medium'>{userData.name}</p>
+                  <button onClick={() => { navigate('/my-profile'); setShowMenu(false) }} className='border border-primary text-primary px-8 py-3 rounded-full font-light'>My Profile</button>
+                  <button onClick={() => { navigate('/my-appointments'); setShowMenu(false) }} className='border border-primary text-primary px-8 py-3 rounded-full font-light'>My Appointments</button>
+                  <button onClick={() => { logout(); setShowMenu(false) }} className='bg-red-500 text-white px-8 py-3 rounded-full font-light'>Logout</button>
+                </>
+              : <button onClick={() => { navigate('/login'); setShowMenu(false) }} className='bg-primary text-white px-8 py-3 rounded-full font-light'>Create account</button>
+            }
+          </div>
+
         </div>
       </div>
     </div>
