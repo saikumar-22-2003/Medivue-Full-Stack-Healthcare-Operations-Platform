@@ -147,7 +147,7 @@ const Appointment = () => {
                     <div className='flex items-center gap-2 mt-1 text-gray-600'>
                         <p>{docInfo.degree} - {docInfo.speciality}</p>
                         <button className='py-0.5 px-2 border text-xs rounded-full'>
-                        {parseInt(docInfo.experience) > 1 ? docInfo.experience.replace('Year', 'Years') : docInfo.experience}
+                        {docInfo.experience}
                         </button>
                         
                     </div>
